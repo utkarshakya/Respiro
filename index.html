@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Break Timer</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerContainer">Logo</div>
+        <div class="headerContainer" id="navLinks">
+            <span><a href="#">Home</a></span>
+            <span><a href="#">About</a></span>
+            <span><a href="#">Contribute</a></span>
+        </div>
+        <div class="headerContainer" id="login"><a href="#">Track Yourself</a></div>
+    </header>
+    <main>
+        <div class="mainContainer" id="durationType">
+            <span>Do You Want Work Some?</span>
+            <label for="minutes">Minutes</label>
+            <input type="radio" name="workDuration" id="minutes" value="minutes">
+            <label for="hours">Hours</label>
+            <input type="radio" name="workDuration" id="hours" value="hours">
+        </div>
+        <div class="mainContainer" id="getDuration" style="display:none;">
+            <input type="number" id="workDuration" placeholder="Enter Work Duration" min="1" max="12">
+            <input type="number" id="breakDuration" placeholder="Enter Break Duration">
+            <input type="button" value="Get Start">
+        </div>
+        <div class="mainContainer" id="showDuration" style="display: none;">
+            <div id="timer">00:00</div>
+            <div id="message"></div>
+        </div>
+        <div class="mainContainer" id="pageControls">
+            <input type="button" value="Back" id="backBtn">
+            <input type="button" value="Next" id="nextBtn">
+        </div>
+    </main>
+
+    <audio id="notificationSound" src="Public/alert_sound.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
