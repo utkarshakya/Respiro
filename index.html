@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -8,42 +8,34 @@
     <link rel="stylesheet" href="output.css">
 </head>
 
-<body>
+<body class="dark:bg-slate-900 text-white text-base">
     <header>
-        <div class="headerContainer">Logo</div>
-        <div class="headerContainer" id="navLinks">
-            <span><a href="#">Home</a></span>
-            <span><a href="#">About</a></span>
-            <span><a href="#">Contribute</a></span>
-        </div>
-        <div class="headerContainer" id="login"><a href="#">Track Yourself</a></div>
+        <!-- Mobile Menu {by default}-->
+        <nav class="flex justify-between py-4 px-6 items-center">
+            <div>
+                <a href="">logo</a>
+            </div>
+            <div>
+                <a href="" id="openMenu">&equiv;</a>
+            </div>
+        </nav>
+        <!-- Mobile Menu {appear on click}-->
+        <nav class="">
+            <div id="mobileMenu"
+                class="min-w-full min-h-screen bg-slate-950 z-10 fixed top-0 right-0 py-10 px-6 flex justify-between -translate-x-full duration-500">
+                <ul class="list-none flex flex-col gap-4 font-semibold">
+                    <li><a href="" class="hover:text-blue-500">Home</a></li>
+                    <li><a href="" class="hover:text-blue-500">About</a></li>
+                    <li><a href="" class="hover:text-blue-500">Contribute</a></li>
+                    <li><a href="" class="hover:text-blue-500">Rate Us</a></li>
+                </ul>
+                <div>
+                    <a href="" id="closeMenu" class="text-2xl hover:text-red-500">&#x2718;</a>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main>
-        <div class="mainContainer" id="durationType">
-            <span>Do You Want Work Some?</span>
-            <label for="minutes">Minutes</label>
-            <input type="radio" name="workDuration" id="minutes" value="minutes">
-            <label for="hours">Hours</label>
-            <input type="radio" name="workDuration" id="hours" value="hours">
-        </div>
-        <div class="mainContainer" id="getDuration" style="display:none;">
-            <input type="number" id="workDuration" placeholder="Enter Work Duration" min="1" max="12">
-            <input type="number" id="breakDuration" placeholder="Enter Break Duration">
-            <input type="button" value="Get Start">
-        </div>
-        <div class="mainContainer" id="showDuration" style="display: none;">
-            <div id="timer">00:00</div>
-            <div id="message"></div>
-        </div>
-        <div class="mainContainer" id="pageControls">
-            <input type="button" value="Back" id="backBtn">
-            <input type="button" value="Next" id="nextBtn">
-        </div>
-    </main>
-
-    <audio id="notificationSound" src="Public/alert_sound.mp3"></audio>
-
-    <script src="script.js"></script>
+    <script src="mobile.js"></script>
 </body>
 
 </html>
