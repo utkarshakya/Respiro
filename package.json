@@ -4,15 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "vite": "npx vite",
+    "build": "npx vite build",
+    "tailwind": "npx @tailwindcss/cli -i ./src/public/style/input.css -o ./src/public/style/output.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
+    "@tailwindcss/cli": "^4.0.8",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.8"
   },
   "devDependencies": {
     "vite": "^6.1.1"
