@@ -1,12 +1,14 @@
 {
-  "name": "takebreaks",
+  "name": "take-breaks",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "vite": "npx vite",
-    "build": "npx vite build",
-    "tailwind": "npx @tailwindcss/cli -i ./src/public/style/input.css -o ./src/public/style/output.css --watch"
+    "vite": "npx vite --host",
+    "tailwind": "npx @tailwindcss/cli -i ./src/public/style/input.css -o ./src/public/style/output.css --watch",
+    "dev": "npm-run-all --parallel vite tailwind",
+    "ngrok": "ngrok http --url=parakeet-relative-properly.ngrok-free.app 5173",
+    "build": "npx vite build"
   },
   "keywords": [],
   "author": "",
