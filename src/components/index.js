@@ -1,4 +1,4 @@
-import Nav from './Header/Nav'
-import Heading from './Body/Heading'
+import Navbar from './head/Navbar'
+import Main from './main/Main'
 
-export {Nav, Heading}
+export {Navbar, Main}
