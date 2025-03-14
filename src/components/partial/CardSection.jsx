@@ -5,9 +5,12 @@ function CardSection() {
   return (
     <>
       <div className="flex flex-col gap-5 py-10">
-        <h1 className="m-auto md:text-xl text-orange-100/70 text-center font-semibold px-5">
-          Quick Start From Renowned Techniques Or Choose A Custom One
+        <div className="m-auto text-center font-semibold">
+        <h1 className="md:text-4xl text-2xl text-slate-300">
+          Quick Start 
         </h1>
+        <p className="text-xs md:text-base text-slate-400 italic">From these renowned techniques</p>
+        </div>
         <div className="flex flex-wrap gap-5 justify-center">
           <Card
             heading={`1) Pomodoro Technique ⏳`}

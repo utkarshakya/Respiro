@@ -1,5 +1,5 @@
 import React from "react";
-import { CardSection, Heading, Navbar } from "./partial";
+import { CardSection, CustomTimer, Heading, Navbar } from "./partial";
 
 function Home() {
   return (
@@ -8,6 +8,7 @@ function Home() {
         <Navbar />
         <Heading />
         <CardSection />
+        <CustomTimer />
       </div>
     </>
   );
