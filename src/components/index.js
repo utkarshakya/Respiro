@@ -1,4 +1,4 @@
-import Navbar from './head/Navbar'
-import Main from './main/Main'
+import Home from './Home'
+import About from "./About"
 
-export {Navbar, Main}
+export {Home, About}
