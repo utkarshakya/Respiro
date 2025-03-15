@@ -1,6 +1,5 @@
 import React from "react";
-import { CardSection, CustomTimer, Heading, Navbar } from "./partial";
-import Footer from "./partial/Footer";
+import { CardSection, CustomTimer, Footer, Heading, Navbar } from "./partial";
 
 function Home() {
   return (
