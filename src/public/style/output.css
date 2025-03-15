@@ -396,6 +396,9 @@
   .bg-gray-800 {
     background-color: var(--color-gray-800);
   }
+  .bg-gray-800\/50 {
+    background-color: color-mix(in oklab, var(--color-gray-800) 50%, transparent);
+  }
   .bg-gray-900 {
     background-color: var(--color-gray-900);
   }
@@ -570,6 +573,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: color-mix(in oklab, var(--color-blue-700) 90%, transparent);
+      }
+    }
+  }
+  .hover\:bg-gray-800 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-800);
       }
     }
   }
