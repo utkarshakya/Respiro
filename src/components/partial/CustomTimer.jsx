@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router";
 
 function CustomTimer() {
   return (
     <>
       <div className="w-full flex flex-col items-center gap-5 py-10">
         <div className="text-center font-semibold">
-        <h1 className="text-2xl md:text-4xl text-slate-300">
-          Use Custom
-        </h1>
-        <p className="text-xs md:text-base italic text-slate-400">Set up a custom timer of you choice</p>
+          <h1 className="text-2xl md:text-4xl text-slate-300">Use Custom</h1>
+          <p className="text-xs md:text-base italic text-slate-400">
+            Set up a custom timer of you choice
+          </p>
         </div>
         <div className="w-full flex flex-col sm:flex-row gap-y-2 gap-x-5 justify-center">
-          <div className="w-full max-w-sm flex flex-col items-center gap-3 bg-gray-700/30 p-5 rounded">
+          <form className="w-full max-w-sm flex flex-col items-center gap-3 bg-gray-700/30 p-5 rounded">
             <input
               type="number"
               placeholder="Working Duration (in minutes)"
@@ -27,10 +28,12 @@ function CustomTimer() {
               placeholder="No. Of Cycles"
               className="w-full bg-gray-700 px-5 py-3 rounded outline-none"
             ></input>
-            <button className="w-full mt-2 px-8 py-2 bg-blue-700 hover:bg-blue-700/80 rounded cursor-pointer font-semibold">
-              Let's Get Start
-            </button>
-          </div>
+            <Link to="/custom">
+              <button className="w-full mt-2 px-8 py-2 bg-blue-700 hover:bg-blue-700/80 rounded cursor-pointer font-semibold">
+                Let's Get Start
+              </button>
+            </Link>
+          </form>
           <div className="w-full max-w-sm flex flex-col gap-3 bg-gray-700/30 p-5 text-sm text-slate-400 cursor-default rounded">
             <h3 className="text-xl">Note:</h3>
             <p>
