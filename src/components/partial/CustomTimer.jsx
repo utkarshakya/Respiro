@@ -1,7 +1,24 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useState } from "react";
 
 function CustomTimer() {
+  const [formData, setFormData] = useState({
+    workDuration: "",
+    breakDuration: "",
+    totalCycles: "",
+  });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  }
+
+  function handleForm(e) {
+    e.preventDefault();
+    if (formData.workDuration && formData.breakDuration) {
+      window.location = `/custom?work=${formData.workDuration}?break=${formData.breakDuration}?cycle=${formData.totalCycles ? formData.totalCycles : 5}`
+    }
+  }
+
   return (
     <>
       <div className="w-full flex flex-col items-center gap-5 py-10">
@@ -12,27 +29,54 @@ function CustomTimer() {
           </p>
         </div>
         <div className="w-full flex flex-col sm:flex-row gap-y-2 gap-x-5 justify-center">
-          <form className="w-full max-w-sm flex flex-col items-center gap-3 bg-gray-700/30 p-5 rounded">
+          <form
+            className="w-full max-w-sm flex flex-col items-center gap-3 bg-gray-700/30 p-5 rounded"
+            onSubmit={handleForm}
+          >
+            <label htmlFor="workDuration"></label>
             <input
+              className="w-full bg-gray-700 px-5 py-3 rounded outline-none"
               type="number"
+              id="workDuration"
+              name="workDuration"
               placeholder="Working Duration (in minutes)"
-              className="w-full bg-gray-700 px-5 py-3 rounded outline-none"
+              min={10}
+              max={180}
+              required
+              value={formData.workDuration}
+              onChange={handleChange}
             ></input>
+            <label htmlFor="breakDuration"></label>
             <input
+              className="w-full bg-gray-700 px-5 py-3 rounded outline-none"
               type="number"
+              id="breakDuration"
+              name="breakDuration"
               placeholder="Breaks Duration (in minutes)"
-              className="w-full bg-gray-700 px-5 py-3 rounded outline-none"
+              min={1}
+              max={60}
+              required
+              value={formData.breakDuration}
+              onChange={handleChange}
             ></input>
+            <label htmlFor="totalCycles"></label>
             <input
-              type="number"
-              placeholder="No. Of Cycles"
               className="w-full bg-gray-700 px-5 py-3 rounded outline-none"
+              type="number"
+              id="totalCycles"
+              name="totalCycles"
+              placeholder="No. Of Cycles (Optional)"
+              min={1}
+              max={100}
+              value={formData.totalCycles}
+              onChange={handleChange}
             ></input>
-            <Link to="/custom">
-              <button className="w-full mt-2 px-8 py-2 bg-blue-700 hover:bg-blue-700/80 rounded cursor-pointer font-semibold">
-                Let's Get Start
-              </button>
-            </Link>
+            <button
+              className="w-full mt-2 px-8 py-2 bg-blue-700 hover:bg-blue-700/80 rounded cursor-pointer font-semibold"
+              type="submit"
+            >
+              Let's Start
+            </button>
           </form>
           <div className="w-full max-w-sm flex flex-col gap-3 bg-gray-700/30 p-5 text-sm text-slate-400 cursor-default rounded">
             <h3 className="text-xl">Note:</h3>
