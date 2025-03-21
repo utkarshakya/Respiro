@@ -15,8 +15,14 @@ function CustomTimer() {
   function handleForm(e) {
     e.preventDefault();
     if (formData.workDuration && formData.breakDuration) {
-      window.location = `/custom?work=${formData.workDuration}?break=${formData.breakDuration}?cycle=${formData.totalCycles ? formData.totalCycles : 5}`
+      window.location = `/custom?work=${formData.workDuration}?break=${
+        formData.breakDuration
+      }?cycle=${formData.totalCycles ? formData.totalCycles : 5}`;
+      exit();
     }
+    alert(
+      "Sorry! You need to provide both BreakDuration and WorkDuration before submitting"
+    );
   }
 
   return (
@@ -40,7 +46,7 @@ function CustomTimer() {
               id="workDuration"
               name="workDuration"
               placeholder="Working Duration (in minutes)"
-              min={10}
+              min={1}
               max={180}
               required
               value={formData.workDuration}
