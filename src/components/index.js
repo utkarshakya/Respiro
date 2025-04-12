@@ -1,9 +1,8 @@
-import Home from './Home'
-import About from "./About"
-import Why from './Why'
-import Custom from './Timers/Custom'
-import Pomodoro from './Timers/Pomodoro'
-import Ultradian from './Timers/Ultradian'
-import FiftyTwoBySeventeen from './Timers/FiftyTwoBySeventeen'
+import Card from "./Card";
+import CardSection from "./CardSection";
+import CustomTimer from "./CustomTimer";
+import Heading from "./Heading";
+import Navbar from "./Navbar"
+import Footer from "./Footer";
 
-export {Home, About, Why, Custom, Pomodoro, Ultradian, FiftyTwoBySeventeen}
+export {Card, CardSection, CustomTimer, Heading, Navbar, Footer}

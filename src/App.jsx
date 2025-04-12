@@ -1,5 +1,5 @@
 import React from "react";
-import { About, Custom, FiftyTwoBySeventeen, Home, Pomodoro, Ultradian, Why } from "./components";
+import { About, Custom, FiftyTwoBySeventeen, Home, Pomodoro, Ultradian, Why } from "./pages";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 function App() {
