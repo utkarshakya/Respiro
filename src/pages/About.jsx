@@ -1,5 +1,5 @@
 import React from "react";
-import { CardSection, CustomTimer, Footer, Heading, Navbar } from "../components";
+import { Footer, Heading, Navbar } from "../components";
 
 function About() {
   return (

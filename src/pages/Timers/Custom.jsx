@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Footer } from "../../components";
 import { useLocation } from "react-router";
-import { clockDigit, getTimerInfoFromURL } from "../../public/script/functions";
+import { clockDigit, getTimerInfoFromURL } from "../../scripts/functions";
 
 function Custom() {
   const [timerInfo, setTimerInfo] = useState({

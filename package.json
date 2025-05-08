@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "vite": "npx vite --host",
-    "tailwind": "npx @tailwindcss/cli -i ./src/public/style/input.css -o ./src/public/style/output.css --watch",
+    "vite": "vite --host",
+    "tailwind": "npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch",
     "dev": "npm-run-all --parallel vite tailwind",
     "ngrok": "ngrok http --url=parakeet-relative-properly.ngrok-free.app 5173",
     "build": "npx vite build"
