@@ -1,8 +1,16 @@
-import Card from "./Card";
+import {CardForLink, CardForInfo} from "./Cards";
 import CustomTimer from "./CustomTimer";
 import HeroSection from "./HeroSection";
-import Navbar from "./Navbar"
+import Navbar from "./Navbar";
 import Footer from "./Footer";
-import useTimer from "./useTimer"
+import useTimer from "./useTimer";
 
-export {Card, CustomTimer, HeroSection, Navbar, Footer, useTimer}
+export {
+  CardForLink,
+  CardForInfo,
+  CustomTimer,
+  HeroSection,
+  Navbar,
+  Footer,
+  useTimer,
+};
