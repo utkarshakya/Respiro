@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Heading, Navbar } from "../components";
+import { Footer, HeroSection, Navbar } from "../components";
 
 function About() {
   return (

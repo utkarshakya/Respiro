@@ -3,7 +3,7 @@ import {
   Card,
   CustomTimer,
   Footer,
-  Heading,
+  HeroSection,
   Navbar,
 } from "../components";
 import { NavLink } from "react-router";
@@ -35,8 +35,8 @@ function Home() {
       <Navbar />
       <div className="w-screen max-w-7xl flex flex-col items-center gap-5 bg-slate-800 mx-auto px-5 md:px-20">
         <div className="w-full h-full flex flex-col gap-5">
-          {/* Hero Section Heading */}
-          <Heading />
+          {/* Hero Section HeroSection */}
+          <HeroSection />
 
           {/* Main Section (Card Section) */}
           <div className="flex flex-col gap-5 py-10">

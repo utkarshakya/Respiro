@@ -10,7 +10,7 @@ function Custom() {
     cycle: null,
   });
   const [showTimer, setShowTimer] = useState(null);
-  const [showTimerHeading, setShowTimerHeading] = useState("Work With Focus");
+  const [showTimerHeroSection, setShowTimerHeroSection] = useState("Work With Focus");
   const [isBreak, setIsBreak] = useState(false)
   const location = useLocation();
 
@@ -66,7 +66,7 @@ function Custom() {
       <div className="w-screen max-w-7xl flex flex-col items-center gap-5 bg-slate-800 mx-auto px-5 md:px-20 py-40">
         <div className="w-full flex flex-col items-center gap-1">
           <h3 className="font-semibold text-gray-400 md:text-2xl">
-            {showTimerHeading}
+            {showTimerHeroSection}
           </h3>
           <p className="font-bold text-4xl text-gray-300 md:text-7xl">
             {showTimer ?? "00:00:00"}

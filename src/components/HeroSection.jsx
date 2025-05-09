@@ -1,6 +1,6 @@
 import React from "react";
 
-function Heading() {
+function HeroSection() {
   return (
     <div className="flex items-center justify-center py-40">
       <div className="text-center">
@@ -16,4 +16,4 @@ function Heading() {
   );
 }
 
-export default Heading;
+export default HeroSection;
