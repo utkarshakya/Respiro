@@ -1,3 +1,4 @@
+import React from "react";
 function About() {
   return (
     <div className="w-screen max-w-7xl flex flex-col items-center gap-5 bg-slate-800 mx-auto px-5 md:px-20">

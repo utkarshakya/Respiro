@@ -1,58 +1,43 @@
 import React from "react";
 import { NavLink } from "react-router";
 
-function Navbar() {
-  return (
-    <nav className="w-full max-w-7xl p-5 flex justify-between flex-wrap gap-3 text-xs mx-auto">
-      {/* Left Part */}
-      <div className="flex gap-x-3 gap-y-1 font-semibold">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `${
-              isActive ? "cursor-default" : "hover:bg-gray-800 hover:text-white"
-            } py-3 px-5 text-gray-300 bg-gray-800/50 rounded-md`
-          }
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            `${
-              isActive ? "cursor-default" : "hover:bg-gray-800 hover:text-white"
-            } py-3 px-5 text-gray-300 bg-gray-800/50 rounded-md`
-          }
-        >
-          About
-        </NavLink>
-      </div>
+const links = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/why", label: "Why?", mobileLabel: "?" },
+];
 
-      {/* Right Part */}
-      <div className="flex font-semibold">
-        <NavLink
-          to="/why"
-          className={({ isActive }) =>
-            `${
-              isActive ? "cursor-default" : "hover:bg-gray-800 hover:text-white"
-            } hidden md:block py-3 px-5 text-gray-300 bg-gray-800/50 rounded-md italic`
-          }
-        >
-          Why?
-        </NavLink>
-        <NavLink
-          to="/why"
-          className={({ isActive }) =>
-            `${
-              isActive ? "cursor-default" : "hover:bg-gray-800 hover:text-white"
-            } md:hidden py-3 px-5 text-gray-300 bg-gray-800/50 rounded-md italic`
-          }
-        >
-          ?
-        </NavLink>
-      </div>
+const Navbar = () => {
+  const linkClasses = ({ isActive }) =>
+    `py-3 px-5 rounded-md font-semibold text-gray-300 bg-gray-800/50 ${
+      isActive ? "cursor-default" : "hover:bg-gray-800 hover:text-white"
+    }`;
+
+  return (
+    <nav className="w-full max-w-7xl p-5 flex justify-between flex-wrap gap-3 mx-auto">
+      <ul className="flex gap-x-3 gap-y-1">
+        {links.slice(0, 2).map((link) => (
+          <li key={link.to}>
+            <NavLink to={link.to} className={linkClasses}>
+              {link.label}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+      <ul className="flex">
+        <li className="hidden md:block">
+          <NavLink to="/why" className={linkClasses}>
+            Why?
+          </NavLink>
+        </li>
+        <li className="md:hidden">
+          <NavLink to="/why" className={linkClasses}>
+            ?
+          </NavLink>
+        </li>
+      </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;

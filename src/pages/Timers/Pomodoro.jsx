@@ -1,5 +1,6 @@
 import React from "react";
-import { useTimer, CardForInfo } from "../../components";
+import { CardForInfo } from "../../components";
+import useTimer from "../../hooks/useTimer";
 
 function Pomodoro() {
   const { formatTime, start, pause, reset, isRunning } = useTimer(20 * 60);
