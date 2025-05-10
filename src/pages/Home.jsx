@@ -28,43 +28,37 @@ const cardDetails = [
 
 function Home() {
   return (
-    <>
-      <Navbar />
-      <div className="w-screen max-w-7xl flex flex-col items-center gap-5 bg-slate-800 mx-auto px-5 md:px-20">
-        <div className="w-full h-full flex flex-col gap-5">
-          {/* Hero Section */}
-          <HeroSection />
+    <div className="w-screen max-w-7xl flex flex-col items-center gap-5 bg-slate-800 mx-auto px-5 md:px-20">
+      <div className="w-full h-full flex flex-col gap-5">
+        {/* Hero Section */}
+        <HeroSection />
 
-          {/* Main Section */}
-          <div className="flex flex-col gap-5 py-10">
-            <div className="m-auto text-center font-semibold">
-              <h1 className="md:text-4xl text-2xl text-slate-300">
-                Quick Start
-              </h1>
-              <p className="text-xs md:text-base text-slate-400 italic">
-                From these renowned techniques
-              </p>
-            </div>
-
-            {/* Cards */}
-            <div className="flex flex-wrap gap-5 justify-center">
-              {cardDetails.map((card) => {
-                return (
-                  <NavLink to={card.uri} key={card.uri}>
-                    <CardForLink
-                      heading={card.heading}
-                      description={card.description}
-                    />
-                  </NavLink>
-                );
-              })}
-            </div>
+        {/* Main Section */}
+        <div className="flex flex-col gap-5 py-10">
+          <div className="m-auto text-center font-semibold">
+            <h1 className="md:text-4xl text-2xl text-slate-300">Quick Start</h1>
+            <p className="text-xs md:text-base text-slate-400 italic">
+              From these renowned techniques
+            </p>
           </div>
-          <CustomTimer />
+
+          {/* Cards */}
+          <div className="flex flex-wrap gap-5 justify-center">
+            {cardDetails.map((card) => {
+              return (
+                <NavLink to={card.uri} key={card.uri}>
+                  <CardForLink
+                    heading={card.heading}
+                    description={card.description}
+                  />
+                </NavLink>
+              );
+            })}
+          </div>
         </div>
+        <CustomTimer />
       </div>
-      <Footer />
-    </>
+    </div>
   );
 }
 

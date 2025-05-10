@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, useTimer, Navbar, CardForInfo } from "../../components";
+import { useTimer, CardForInfo } from "../../components";
 
 function Pomodoro() {
   const { formatTime, start, pause, reset, isRunning } = useTimer(20 * 60);
@@ -8,7 +8,6 @@ function Pomodoro() {
 
   return (
     <>
-      <Navbar />
       <div className="w-screen max-w-7xl flex flex-col items-center gap-5 bg-slate-800 mx-auto p-5 md:px-20">
         {/* Introduction */}
         <div className="">
@@ -51,11 +50,13 @@ function Pomodoro() {
         <div className="flex flex-col">
           <h3 className="font-bold text-3xl">Key Features</h3>
           <div>
-          <CardForInfo title={`25-Minute Focus`} description={`Dive into a single task for a dedicated 25-minute work session. This “Pomodoro” window trains your brain to concentrate without interruptions.`}/>
+            <CardForInfo
+              title={`25-Minute Focus`}
+              description={`Dive into a single task for a dedicated 25-minute work session. This “Pomodoro” window trains your brain to concentrate without interruptions.`}
+            />
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

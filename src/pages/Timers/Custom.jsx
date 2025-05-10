@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Footer } from "../../components";
 import { useLocation } from "react-router";
-import { clockDigit, getTimerInfoFromURL } from "../../scripts/functions";
 
 function Custom() {
   const [timerInfo, setTimerInfo] = useState({
@@ -10,18 +8,19 @@ function Custom() {
     cycle: null,
   });
   const [showTimer, setShowTimer] = useState(null);
-  const [showTimerHeroSection, setShowTimerHeroSection] = useState("Work With Focus");
-  const [isBreak, setIsBreak] = useState(false)
+  const [showTimerHeroSection, setShowTimerHeroSection] =
+    useState("Work With Focus");
+  const [isBreak, setIsBreak] = useState(false);
   const location = useLocation();
 
   function setTimer(isWork = true) {
     let interval;
     let timer;
 
-    if(!isWork){
-      timer = (timerInfo.break)*60
-    }else{
-      timer = (timerInfo.work)*60;
+    if (!isWork) {
+      timer = timerInfo.break * 60;
+    } else {
+      timer = timerInfo.work * 60;
     }
 
     function updateTimer() {
@@ -36,21 +35,20 @@ function Custom() {
         timer--;
       } else {
         clearInterval(interval);
-        setIsBreak(true)
+        setIsBreak(true);
       }
     }
-    updateTimer()
+    updateTimer();
 
     interval = setInterval(updateTimer, 1000);
-
   }
 
   useEffect(() => {
     if (timerInfo.work) {
       setTimer();
     }
-    if(isBreak){
-      setTimer(false)
+    if (isBreak) {
+      setTimer(false);
     }
   }, [timerInfo, isBreak]);
 
@@ -62,7 +60,6 @@ function Custom() {
 
   return (
     <>
-      <Navbar />
       <div className="w-screen max-w-7xl flex flex-col items-center gap-5 bg-slate-800 mx-auto px-5 md:px-20 py-40">
         <div className="w-full flex flex-col items-center gap-1">
           <h3 className="font-semibold text-gray-400 md:text-2xl">
@@ -73,7 +70,6 @@ function Custom() {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
